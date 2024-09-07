@@ -11,7 +11,7 @@ This is the frontend of an e-commerce web application built with Angular 17, uti
 
 ## API Documentation
 - The application interacts with the following API.
-- You can explore and test the API endpoints using the Postman collection: [Route E-Commerce App](https://documenter.getpostman.com/view/5709532/2s93JqTRWN).
+- You can explore and test the API endpoints using the Postman documentation: [ E-Commerce API Documentation](https://documenter.getpostman.com/view/5709532/2s93JqTRWN).
 
 ## Live Demo
 - You can view the live app at:[FreshCart](https://frechcartapp.netlify.app/).
