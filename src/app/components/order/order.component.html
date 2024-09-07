@@ -1,0 +1,57 @@
+<section class="bg-main-light shadow p-2 my-2 rounded-4">
+    <h1 class="h2 text-main">{{ 'order.shipping_address' | translate }}</h1>
+    <form [formGroup]="orderForm" class="p-3" (ngSubmit)="OnSubmit(clickedButton)">
+        <div class="my-2">
+            <label for="details">{{ 'order.details' | translate }}</label>
+            <input id="details" type="text" class="form-control" formControlName="details" [ngClass]="
+            {
+                'is-valid': !orderForm.get('details')?.errors && (orderForm.get('details')?.touched || orderForm.get('details')?.dirty),
+                'is-invalid': orderForm.get('details')?.errors && (orderForm.get('details')?.touched || orderForm.get('details')?.dirty)
+            }">
+            @if (orderForm.get("details")?.errors && (orderForm.get("details")?.touched || orderForm.get("details")?.dirty)) {
+                <div class="alert alert-danger w-50 m-0">
+                    @if (orderForm.get("details")?.getError("required")) {
+                        <p>{{ 'order.details_required' | translate }}</p>
+                    }
+                </div>
+            }
+        </div>
+        <div class="my-2">
+            <label for="phone">{{ 'order.phone' | translate }}</label>
+            <input id="phone" type="text" class="form-control" formControlName="phone" [ngClass]="
+            {
+                'is-valid': !orderForm.get('phone')?.errors && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty),
+                'is-invalid': orderForm.get('phone')?.errors && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty)
+                }">
+            @if (orderForm.get("phone")?.errors && (orderForm.get("phone")?.touched || orderForm.get("phone")?.dirty)) {
+                <div class="alert alert-danger w-50 m-0">
+                    @if (orderForm.get("phone")?.getError("required")) {
+                        <p>{{ 'order.phone_required' | translate }}</p>
+                    }@else if(orderForm.get("phone")?.getError("pattern")) {
+                        <p>{{ 'order.invalid_phone_number' | translate }}</p>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="city">{{ 'order.city' | translate }}</label>
+            <input id="city" type="text" class="form-control" formControlName="city" [ngClass]="
+            {
+                'is-valid': !orderForm.get('city')?.errors && (orderForm.get('city')?.touched || orderForm.get('city')?.dirty),
+                'is-invalid': orderForm.get('city')?.errors && (orderForm.get('city')?.touched || orderForm.get('city')?.dirty)
+            }">
+            @if (orderForm.get("city")?.errors && (orderForm.get("city")?.touched || orderForm.get("city")?.dirty)) {
+                <div class="alert alert-danger w-50 m-0">
+                    @if (orderForm.get("city")?.getError("required")) {
+                        <p>{{ 'order.city_required' | translate }}</p>
+                    }
+                </div>
+            }
+        </div>
+
+        <button (click)="clickedButton='card'" type="submit" class="btn-main" [disabled]="orderForm.invalid">{{ 'order.check_out' | translate }}</button>
+        <button (click)="clickedButton='cach'" type="submit" class="btn-main ms-3" [disabled]="orderForm.invalid">{{ 'order.cash_on_delivery' | translate }}</button>
+
+    </form>
+</section>

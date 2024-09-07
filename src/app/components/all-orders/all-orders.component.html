@@ -1,0 +1,43 @@
+@if (isBack) {
+    <section class="bg-main-light rounded-4 shadow my-2 p-3 w-75 mx-auto">
+        <h1 class="h2 text-main">{{ 'all-orders.orders' | translate }}</h1> 
+    
+        @if (ordersList.length === 0) {
+            <div class="text-center fw-bold">
+                <h3 class="text-main">{{ 'all-orders.no_orders' | translate }}</h3>
+                <button routerLink="/home" class="text-decoration-underline btn">{{ 'all-orders.continue_shopping' | translate }}</button>
+            </div>
+        }
+        @else {
+        @for (order of ordersList; track order.id; let i = $index) {
+            <div class="row mb-1 border-bottom border-3">
+                <div class="circle bg-main">{{ordersList.length - i}}</div>
+                <div class="fw-bold">
+                    <p>{{ 'all-orders.order_id' | translate }}: {{order.id}} </p>
+                    <p>{{ 'all-orders.total_price' | translate }}: {{order.totalOrderPrice | currency :"EGP"}}</p>
+                    <p>{{ 'all-orders.order_date' | translate }}: {{order.createdAt | date : "MMM d, y, h:mm a"}}</p>
+                    <p>{{ 'all-orders.payment_method' | translate }}: <span class="badge bg-main">{{order.paymentMethodType | titlecase}}</span></p>
+                    @if (order.isPaid) {
+                        <p>{{ 'all-orders.paid_at' | translate }} {{order.paidAt | date : "MMM d, y, h:mm a" }}</p>
+                    }
+                </div>
+                @for (item of order.cartItems; track item._id) {
+                    <div class="col-md-1">
+                        <div>
+                            <img [src]="item.product.imageCover" [alt]="item.product.title" class="w-100">
+                        </div>
+                    </div>
+                    <div class="col-md-11 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3 class="h5">{{item.product.title}}</h3>
+                            <p class="text-main fw-bold m-0">{{ 'all-orders.price' | translate }}: {{item.price | currency : "EGP"}}</p>
+                            <p>{{ 'all-orders.quantity' | translate }}: {{item.count}}</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    }
+    </section>
+    }
+    

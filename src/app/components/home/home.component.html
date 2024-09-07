@@ -1,0 +1,80 @@
+<section>
+    <div class="row g-0">
+        <div class="col-md-9">
+            <div>
+                <owl-carousel-o [options]="mainCustomOptions">
+                    <ng-template carouselSlide>
+                        <img src="./assets/images/slider-image-3.jpeg" class="w-100" height="300" alt="{{ 'home.slider_image_1_alt' | translate }}">
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <img src="./assets/images/slider-2.jpeg" class="w-100" height="300" alt="{{ 'home.slider_image_2_alt' | translate }}">
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <img src="./assets/images/banner-4.jpeg" class="w-100" height="300" alt="{{ 'home.slider_image_3_alt' | translate }}">
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+        </div> 
+        <div class="col-md-3">
+            <div>
+                <img src="./assets/images/grocery-banner.png" class="w-100" height="150" alt="{{ 'home.grocery_banner_1_alt' | translate }}">
+                <img src="./assets/images/grocery-banner-2.jpeg" class="w-100" height="150" alt="{{ 'home.grocery_banner_2_alt' | translate }}">
+            </div>
+        </div> 
+    </div>
+</section>
+
+<section>
+    <h2>{{ 'home.shop_popular_categories_title' | translate }}</h2>
+    <owl-carousel-o [options]="catCustomOptions">
+        @for (category of categoriesList(); track category._id) {
+            <ng-template carouselSlide>
+                <div>
+                    <img [src]="category.image" [alt]="category.name" class="w-100" height="250">
+                    <h3 class="h6 text-main text-center">{{category.name | titlecase}}</h3>
+                </div>
+            </ng-template>
+        }
+    </owl-carousel-o>
+</section>
+
+<section>
+    <h2>{{ 'home.popular_products_title' | translate }}</h2>
+    <input type="search" placeholder="{{ 'home.search_placeholder' | translate }}" class="form-control w-50 mx-auto my-3" [(ngModel)]="text">
+    <div class="row g-3">
+        @for (product of productsList() | slice : 0 : 12 | search : text; track product.id) {
+            <div class="col-md-2">
+                <div class="product p-2">
+                    <div [routerLink]="['/details',product.id]">
+                        <img [src]="product.imageCover" [alt]="product.title" class="w-100">
+                        <h3 class="small fw-bold text-main py-2">{{ product.category.name | uppercase }}</h3>
+                        <h4 class="h6 fw-bolder">{{product.title | trimText : 2}}</h4>
+                        <div class="d-flex justify-content-between align-items-center py-3 fw-bold">
+                            <span>{{product.price | currency:"EGP"}}</span>
+                            <div>
+                                @for (i of [1,2,3,4,5] | slice : 0 : product.ratingsAverage; track $index) {
+                                    <i class="fas fa-star rating-color"></i>
+                                }
+                                @if (product.ratingsAverage%1!==0) {
+                                    <i class="fas fa-star-half-alt rating-color"></i>
+                                }
+                                <span class="text-muted">{{product.ratingsAverage}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around align-items-center">
+                        <button (click)="AddToCart(product.id)" class="btn-main">{{ 'home.add_to_cart_button' | translate }}
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                        </button>
+                        <span 
+                            (click)="wishlistStatus[product.id]?RemoveFromWishList(product.id):AddToWishlist(product.id)" 
+                            [ngClass]="{'text-danger':wishlistStatus[product.id],'text-main':!wishlistStatus[product.id]}" 
+                            class="text-main cursor-pointer wishlist">
+                            <i class="fa-solid fa-heart fa-xl"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,145 @@
+{
+  "register": {
+    "register_title": "سجل الآن",
+    "name_label": "الاسم",
+    "email_label": "البريد الإلكتروني",
+    "password_label": "كلمة المرور",
+    "repassword_label": "إعادة كلمة المرور",
+    "phone_label": "الهاتف",
+    "name_required": "الاسم مطلوب",
+    "name_min_length": "يجب أن يكون الاسم 6 أحرف على الأقل",
+    "email_required": "البريد الإلكتروني مطلوب",
+    "invalid_email": "بريد إلكتروني غير صالح",
+    "password_required": "كلمة المرور مطلوبة",
+    "password_min_length": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "password_mismatch": "تأكيد كلمة المرور غير صحيح",
+    "phone_required": "الهاتف مطلوب",
+    "invalid_phone": "رقم الهاتف غير صالح",
+    "register_button": "تسجيل",
+    "register_success": "تم التسجيل بنجاح!"
+  },
+  "login": {
+    "login_title": "تسجيل الدخول",
+    "email_label": "البريد الإلكتروني",
+    "password_label": "كلمة المرور",
+    "email_required": "البريد الإلكتروني مطلوب",
+    "invalid_email": "بريد إلكتروني غير صالح",
+    "password_required": "كلمة المرور مطلوبة",
+    "password_min_length": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "forgot_password_link": "هل نسيت كلمة المرور؟",
+    "login_button": "تسجيل الدخول",
+    "login_success": "تم تسجيل الدخول بنجاح!"
+  },
+  "nav-blank": {
+    "logo_alt": "شعار فريش كارت",
+    "home": "الصفحة الرئيسية",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "wishlist": "المفضلة",
+    "cart": "عربة التسوق",
+    "sign_out": "تسجيل الخروج",
+    "lang": "العربية"
+  },
+  "nav-auth": {
+    "logo_alt": "شعار فريش كارت",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "lang": "العربية"
+  },
+  "home": {
+    "slider_image_1_alt": "صورة السلايدر 1",
+    "slider_image_2_alt": "صورة السلايدر 2",
+    "slider_image_3_alt": "صورة السلايدر 3",
+    "grocery_banner_1_alt": "بانر البقالة 1",
+    "grocery_banner_2_alt": "بانر البقالة 2",
+    "shop_popular_categories_title": "تسوق الفئات الشائعة",
+    "popular_products_title": "المنتجات الشائعة",
+    "search_placeholder": "بحث",
+    "add_to_cart_button": "أضف إلى السلة"
+  },
+  "products": {
+    "all_products": "جميع المنتجات",
+    "search_placeholder": "بحث",
+    "add_to_cart": "أضف إلى السلة"
+  },
+  "categories": {
+    "all_categories": "جميع الفئات",
+    "subcategories_title": "فئات فرعية لـ {{categoryName}}",
+    "no_subcategories_found": "لم يتم العثور على فئات فرعية لـ '{{categoryName}}'"
+  },
+  "brands": {
+    "all_brands": "جميع العلامات التجارية"
+  },
+  "wishlist": {
+    "my_wishlist": "قائمتي المفضلة",
+    "wishlist_empty_message": "قائمتك المفضلة فارغة!",
+    "continue_shopping": "تابع التسوق",
+    "price_label": "السعر",
+    "add_to_cart": "أضف إلى السلة"
+  },
+  "cart": {
+    "shop_cart": "عربة التسوق",
+    "clear_cart": "تفريغ العربة",
+    "total_cart_price": "إجمالي سعر العربة",
+    "orders_history": "تاريخ الطلبات",
+    "cart_empty_message": "عربتك فارغة!",
+    "continue_shopping": "تابع التسوق",
+    "price_label": "السعر",
+    "order": "طلب"
+  },
+
+  "order": {
+    "shipping_address": "عنوان الشحن",
+    "details": "التفاصيل",
+    "phone": "الهاتف",
+    "city": "المدينة",
+    "details_required": "التفاصيل مطلوبة",
+    "phone_required": "الهاتف مطلوب",
+    "invalid_phone_number": "رقم الهاتف غير صالح",
+    "city_required": "المدينة مطلوبة",
+    "check_out": "الدفع",
+    "cash_on_delivery": "الدفع عند الاستلام"
+  },
+  "forgot-password": {
+    "forgot_password_title": "نسيت كلمة المرور",
+    "email_label": "البريد الإلكتروني",
+    "reset_code_label": "رمز الاستعادة",
+    "new_password_label": "كلمة المرور الجديدة",
+    "verify_email_button": "التحقق من البريد الإلكتروني",
+    "verify_code_button": "التحقق من الرمز",
+    "reset_password_button": "إعادة تعيين كلمة المرور",
+    "email_required": "البريد الإلكتروني مطلوب",
+    "invalid_email": "بريد إلكتروني غير صالح",
+    "code_required": "الرمز مطلوب",
+    "code_pattern_error": "يجب أن يكون الرمز على الأقل 4 أرقام",
+    "password_required": "كلمة المرور مطلوبة",
+    "password_pattern_error": "يجب أن تكون كلمة المرور على الأقل 6 أحرف"
+  },
+  "footer": {
+    "get_app_title": "احصل على تطبيق FreshCart",
+    "get_app_subtitle": "سوف نرسل لك رابطًا، افتحه على هاتفك لتنزيل التطبيق",
+    "email_placeholder": "البريد الإلكتروني",
+    "share_app_button": "مشاركة رابط التطبيق",
+    "payment_partners_title": "شركاء الدفع",
+    "get_deliveries_title": "احصل على التوصيل مع FreshCart",
+    "amazon_pay_alt": "أمازون باي",
+    "american_express_alt": "أمريكان إكسبريس",
+    "paypal_alt": "باي بال",
+    "mastercard_alt": "ماستركارد",
+    "google_play_alt": "احصل عليه على Google Play",
+    "apple_store_alt": "تنزيل على App Store"
+  },
+  "all-orders": {
+    "orders": "الطلبات",
+    "no_orders": "لم تقم بوضع أي طلبات بعد!",
+    "continue_shopping": "تابع التسوق",
+    "order_id": "رقم الطلب",
+    "total_price": "إجمالي السعر",
+    "order_date": "تاريخ الطلب",
+    "payment_method": "طريقة الدفع",
+    "paid_at": "تم الدفع في",
+    "price": "السعر",
+    "quantity": "الكمية"
+  }
+}

@@ -1,0 +1,39 @@
+@if (isCatBack) {
+    @if (categoriesList()) {
+        <section class="px-5">
+            <h2 class="text-main">{{ 'categories.all_categories' | translate }}</h2>
+            <div class="row g-5 p-3">
+                @for (category of categoriesList(); track category._id) {
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card w-100 product" (click)="GetSubCategories(category._id, category.name)">
+                            <img [src]="category.image" [alt]="category.name" class="card-img-top object-fit-cover" height="300">
+                            <div class="card-body text-center">
+                                <h3 class="h4 fw-bold text-main">{{ category.name }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+        @if (isClicked && isSubCatBack) {
+            <section class="px-5 my-5" #targetSection>
+                @if (subCategoriesList.length !== 0) {
+                    <h2 class="text-main text-center">{{ 'categories.subcategories_title' | translate: { categoryName: categoryName } }}</h2>
+                    <div class="row g-3">
+                        @for (subCategory of subCategoriesList; track subCategory._id) {
+                            <div class="col-md-4">
+                                <div class="product p-2 text-center fw-bold">
+                                    <h3>{{ subCategory.name }}</h3>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                @else {
+                    <h2 class="text-center text-main">{{ 'categories.no_subcategories_found' | translate: { categoryName: categoryName } }}</h2>
+                }
+            </section>
+        }
+    }
+}

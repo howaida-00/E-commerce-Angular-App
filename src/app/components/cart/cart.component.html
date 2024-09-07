@@ -1,0 +1,59 @@
+@if (isBack) {
+    <section class="bg-main-light rounded-4 shadow my-2 p-3 w-75 mx-auto">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="h2 fw-bold">{{ 'cart.shop_cart' | translate }}</h1>
+            @if(cartDetails.totalCartPrice !== 0){
+            <button (click)="ClearCart()" class="btn btn-outline-danger p-2 cursor-pointer">
+                {{ 'cart.clear_cart' | translate }}
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+            }
+        </div>
+        @if(cartDetails.totalCartPrice !== 0){
+            <p class="text-main fw-bold">{{ 'cart.total_cart_price' | translate }}: {{ cartDetails.totalCartPrice | currency: 'EGP' }}</p>
+        }
+        <div class="d-flex justify-content-end">
+            <button routerLink="/allorders" class="btn btn-outline-dark">
+                {{ 'cart.orders_history' | translate }}
+                <i class="fa-solid fa-clock-rotate-left ps-1"></i>
+            </button>
+        </div>
+        @if (cartDetails.totalCartPrice === 0) {
+            <div class="text-center fw-bold">
+                <div class="mb-3"><i class="fa-solid fa-cart-shopping fa-3x"></i></div>
+                <h4 class="text-main">{{ 'cart.cart_empty_message' | translate }}</h4>
+                <button routerLink="/home" class="text-decoration-underline btn">{{ 'cart.continue_shopping' | translate }}</button>
+            </div>
+        }
+        @else {
+            @for (item of cartDetails.products; track item._id) {
+                <div class="row mb-1 border-bottom border-3">
+                    <div class="col-md-1">
+                        <div>
+                            <img [src]="item.product.imageCover" [alt]="item.product.title" class="w-100">
+                        </div>
+                    </div>
+                    <div class="col-md-11 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3 class="h5">{{ item.product.title }}</h3>
+                            <p class="text-main fw-bold m-0">{{ 'cart.price_label' | translate }}: {{ item.price | currency: 'EGP' }}</p>
+                            <button (click)="RemoveItem(item.product.id)" class="btn p-0 text-danger cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center gap-3">
+                            <span (click)="UpdateProductQuantity(item.product.id, item.count + 1)" class="text-main cursor-pointer">
+                                <i class="fa-solid fa-circle-plus fa-xl"></i>
+                            </span>
+                            <span class="fw-bold">{{ item.count }}</span>
+                            <span (click)="UpdateProductQuantity(item.product.id, item.count - 1)" class="text-main cursor-pointer">
+                                <i class="fa-solid fa-circle-minus fa-xl"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+            <button [routerLink]="['/order', cartDetails._id]" [disabled]="cartDetails.totalCartPrice === 0" class="btn-main">{{ 'cart.order' | translate }}</button>
+        }
+    </section>
+}

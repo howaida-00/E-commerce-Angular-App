@@ -1,0 +1,47 @@
+@if(product){
+    <section>
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div>
+                    <owl-carousel-o [options]="productImgCustomOptions">
+                        @for (img of product.images; track $index) {
+                            <ng-template carouselSlide>
+                                <div>
+                                    <img [src]="img" [alt]="product.title" class="w-100">
+                                </div>
+                            </ng-template>
+                        }
+                    </owl-carousel-o>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h2 class="text-main fw-bolder">{{ product.title }}</h2>
+                <p class="text-muted fw-bold">{{ product.description }}</p>
+                <h3 class="h6 text-main">{{ product.category.name | uppercase }}</h3>
+                <div class="d-flex justify-content-between align-items-center py-3 fw-bold">
+                    <span>{{ product.price | currency: "EGP" }}</span>
+                    <div>
+                        @for (i of [1,2,3,4,5] | slice : 0 : product.ratingsAverage; track $index) {
+                            <i class="fas fa-star rating-color"></i>
+                        }
+                        @if (product.ratingsAverage % 1 !== 0) {
+                            <i class="fas fa-star-half-alt rating-color"></i>
+                        }
+                        <span class="text-muted">{{ product.ratingsAverage }}</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <button (click)="AddToCart(product.id)" class="btn-main w-100">{{ 'products.add_to_cart' | translate }}
+                        <span><i class="fa-solid fa-cart-plus"></i></span>
+                    </button>
+                    <span 
+                        (click)="wishlistStatus[product.id] ? RemoveFromWishList(product.id) : AddToWishlist(product.id)" 
+                        [ngClass]="{'text-danger': wishlistStatus[product.id], 'text-main': !wishlistStatus[product.id]}" 
+                        class="text-main cursor-pointer wishlist px-3">
+                        <i class="fa-solid fa-heart fa-3x"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+}

@@ -1,0 +1,144 @@
+{
+  "register": {
+    "register_title": "Register Now",
+    "name_label": "Name",
+    "email_label": "Email",
+    "password_label": "Password",
+    "repassword_label": "RePassword",
+    "phone_label": "Phone",
+    "name_required": "Name is required",
+    "name_min_length": "Name must be at least 6 characters",
+    "email_required": "Email is required",
+    "invalid_email": "Invalid email",
+    "password_required": "Password is required",
+    "password_min_length": "Password must be at least 6 characters",
+    "password_mismatch": "Incorrect password confirmation",
+    "phone_required": "Phone is required",
+    "invalid_phone": "Invalid phone number",
+    "register_button": "Register",
+    "register_success": "Successfully Registered!"
+  },
+  "login": {
+    "login_title": "Login",
+    "email_label": "Email",
+    "password_label": "Password",
+    "email_required": "Email is required",
+    "invalid_email": "Invalid email",
+    "password_required": "Password is required",
+    "password_min_length": "Password must be at least 6 characters",
+    "forgot_password_link": "Forgot Password?",
+    "login_button": "Login",
+    "login_success": "Successfully Logged in!"
+  },
+  "nav-blank": {
+    "logo_alt": "FreshCart Logo",
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "sign_out": "Sign Out",
+    "lang": "English"
+  },
+  "nav-auth": {
+    "logo_alt": "FreshCart Logo",
+    "login": "Login",
+    "register": "Register",
+    "lang": "English"
+  },
+  "home": {
+    "slider_image_1_alt": "Slider Image 1",
+    "slider_image_2_alt": "Slider Image 2",
+    "slider_image_3_alt": "Slider Image 3",
+    "grocery_banner_1_alt": "Grocery Banner 1",
+    "grocery_banner_2_alt": "Grocery Banner 2",
+    "shop_popular_categories_title": "Shop Popular Categories",
+    "popular_products_title": "Popular Products",
+    "search_placeholder": "Search",
+    "add_to_cart_button": "Add to cart"
+  },
+  "products": {
+    "all_products": "All Products",
+    "add_to_cart": "Add to cart",
+    "search_placeholder": "Search"
+  },
+  "categories": {
+    "all_categories": "All Categories",
+    "subcategories_title": "{{categoryName}} Sub categories",
+    "no_subcategories_found": "No sub categories found for '{{categoryName}}'"
+  },
+  "brands": {
+    "all_brands": "All Brands"
+  },
+  "wishlist": {
+    "my_wishlist": "My Wishlist",
+    "wishlist_empty_message": "Your wishlist is empty!",
+    "continue_shopping": "Continue shopping",
+    "price_label": "Price",
+    "add_to_cart": "Add to cart"
+  },
+  "cart": {
+    "shop_cart": "Shop Cart",
+    "clear_cart": "Clear Cart",
+    "total_cart_price": "Total Cart Price",
+    "orders_history": "Orders history",
+    "cart_empty_message": "Your cart is empty!",
+    "continue_shopping": "Continue shopping",
+    "price_label": "Price",
+    "order": "Order"
+  },
+  "order": {
+    "shipping_address": "Shipping Address",
+    "details": "Details",
+    "phone": "Phone",
+    "city": "City",
+    "details_required": "Details is required",
+    "phone_required": "Phone is required",
+    "invalid_phone_number": "Invalid phone number",
+    "city_required": "City is required",
+    "check_out": "Check Out",
+    "cash_on_delivery": "Cash On Delivery"
+  },
+  "forgot-password": {
+    "forgot_password_title": "Forgot Password",
+    "email_label": "Email",
+    "reset_code_label": "Reset Code",
+    "new_password_label": "New Password",
+    "verify_email_button": "Verify Email",
+    "verify_code_button": "Verify Code",
+    "reset_password_button": "Reset Password",
+    "email_required": "Email is required",
+    "invalid_email": "Invalid email",
+    "code_required": "Code is required",
+    "code_pattern_error": "Code must be at least 4 digits",
+    "password_required": "Password is required",
+    "password_pattern_error": "Password must be at least 6 characters"
+  },
+  "footer": {
+    "get_app_title": "Get The FreshCart App",
+    "get_app_subtitle": "We will send you a link, open it on your phone to download the app",
+    "email_placeholder": "Email",
+    "share_app_button": "Share App Link",
+    "payment_partners_title": "Payment Partners",
+    "get_deliveries_title": "Get Deliveries with FreshCart",
+    "amazon_pay_alt": "Amazon Pay",
+    "american_express_alt": "American Express",
+    "paypal_alt": "PayPal",
+    "mastercard_alt": "MasterCard",
+    "google_play_alt": "Get it on Google Play",
+    "apple_store_alt": "Download on the App Store"
+  },
+  "all-orders": {
+    "orders": "Orders",
+    "no_orders": "You have not placed any orders yet!",
+    "continue_shopping": "Continue shopping",
+    "order_id": "Order id",
+    "total_price": "Total price",
+    "order_date": "Order date",
+    "payment_method": "Payment method",
+    "paid_at": "Paid at",
+    "price": "Price",
+    "quantity": "Quantity"
+  }
+}

@@ -1,0 +1,35 @@
+@if (isBack) {
+    <section class="bg-main-light rounded-4 shadow my-2 p-3 w-75 mx-auto">
+        <h1 class="h2 fw-bold">{{ 'wishlist.my_wishlist' | translate }}</h1>
+        @if (productList.length === 0) {
+            <div class="text-center fw-bold">
+                <div class="mb-3 text-danger"><i class="fa-solid fa-heart-crack fa-3x"></i></div>
+                <h4 class="text-main">{{ 'wishlist.wishlist_empty_message' | translate }}</h4>
+                <button routerLink="/home" class="text-decoration-underline btn">{{ 'wishlist.continue_shopping' | translate }}</button>
+            </div>
+        }
+        @else {
+            @for (item of productList; track item.id) {
+                <div class="row mb-1 border-bottom border-3">
+                    <div class="col-md-1">
+                        <div>
+                            <img [src]="item.imageCover" [alt]="item.title" class="w-100">
+                        </div>
+                    </div>
+                    <div class="col-md-11 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3 class="h5">{{ item.title }}</h3>
+                            <p class="text-main fw-bold m-0">{{ 'wishlist.price_label' | translate }}: {{ item.price | currency: "EGP" }}</p>
+                            <button (click)="RemoveFromWishList(item.id)" class="btn p-0 text-danger cursor-pointer">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                        <button (click)="AddToCart(item.id)" class="btn-main">{{ 'wishlist.add_to_cart' | translate }}
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                        </button>
+                    </div>
+                </div>
+            }
+        }
+    </section>
+}
