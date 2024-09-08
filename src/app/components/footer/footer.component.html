@@ -1,36 +1,42 @@
 <footer class="bg-main-light py-5">
   <div class="container">
     <h2 class="m-0 h4">{{ 'footer.get_app_title' | translate }}</h2>
-    <p class="text-muted small">
-      {{ 'footer.get_app_subtitle' | translate }}
-    </p>
+    <p class="text-muted small">{{ 'footer.get_app_subtitle' | translate }}</p>
 
-    <!-- inputs design -->
-    <div class="d-flex align-items-center gap-3 text-nowrap">
-      <input type="text" class="form-control" placeholder="{{ 'footer.email_placeholder' | translate }}" />
-      <button class="btn-main">{{ 'footer.share_app_button' | translate }}</button>
+    <!-- Inputs for email -->
+    <div class="row mb-4">
+      <div class="col-md-8 col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{{ 'footer.email_placeholder' | translate }}" />
+          <button class="btn-main">{{ 'footer.share_app_button' | translate }}</button>
+        </div>
+      </div>
     </div>
 
     <hr />
 
-    <!-- footer payment Details Design -->
-    <div class="pay-details d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-2">
-        <h3 class="h6 m-0">{{ 'footer.payment_partners_title' | translate }}</h3>
-        <img src="./assets/images/amazon-pay.png" width="30px" alt="{{ 'footer.amazon_pay_alt' | translate }}" />
-        <img
-          src="./assets/images/American-Express-Color.png"
-          width="30px"
-          alt="{{ 'footer.american_express_alt' | translate }}"
-        />
-        <img src="./assets/images/paypal.png" width="30px" alt="{{ 'footer.paypal_alt' | translate }}" />
-        <img src="./assets/images/mastercard.webp" width="30px" alt="{{ 'footer.mastercard_alt' | translate }}" />
+    <!-- Footer payment details and app store buttons -->
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <h3 class="h6 m-0">{{ 'footer.payment_partners_title' | translate }}</h3>
+          <img src="./assets/images/amazon-pay.png" width="30px" alt="{{ 'footer.amazon_pay_alt' | translate }}" />
+          <img
+            src="./assets/images/American-Express-Color.png"
+            width="30px"
+            alt="{{ 'footer.american_express_alt' | translate }}"
+          />
+          <img src="./assets/images/paypal.png" width="30px" alt="{{ 'footer.paypal_alt' | translate }}" />
+          <img src="./assets/images/mastercard.webp" width="30px" alt="{{ 'footer.mastercard_alt' | translate }}" />
+        </div>
       </div>
 
-      <div class="d-flex align-items-center gap-2">
-        <h3 class="h6 m-0">{{ 'footer.get_deliveries_title' | translate }}</h3>
-        <img src="./assets/images/get-google-play.png" width="75px" alt="{{ 'footer.google_play_alt' | translate }}" />
-        <img src="./assets/images/get-apple-store.png" width="75px" alt="{{ 'footer.apple_store_alt' | translate }}" />
+      <div class="col-lg-6 text-lg-end">
+        <div class="d-flex align-items-center justify-content-lg-end gap-2 flex-wrap">
+          <h3 class="h6 m-0">{{ 'footer.get_deliveries_title' | translate }}</h3>
+          <img src="./assets/images/get-google-play.png" width="75px" alt="{{ 'footer.google_play_alt' | translate }}" />
+          <img src="./assets/images/get-apple-store.png" width="75px" alt="{{ 'footer.apple_store_alt' | translate }}" />
+        </div>
       </div>
     </div>
   </div>
